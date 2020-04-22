@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<a href="{% url 'community:create' %}">[NEW]</a>
+<h2>리뷰 목록</h2>
+<hr>
+{% for review in reviews %}
+<h4>제목 :<a href="{% url 'community:detail' review.pk %}" class="text-decoration-none text-dark">{{ review.title }}</a></h4>
+<hr>
+{% endfor %}
+{% endblock %}
